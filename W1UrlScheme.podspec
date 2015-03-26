@@ -10,7 +10,9 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.0'
   s.source       = { :git => 'https://github.com/bespalown/W1UrlScheme.git', :branch => 'master' }
   s.source_files = 'W1UrlScheme_Lib/**/*.h'
-  s.library   	 = 'W1UrlScheme'
+  s.preserve_paths = 'W1UrlScheme_Lib/W1UrlScheme.a' 
+  s.library = 'W1UrlScheme'
+  s.xcconfig = { 'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/W1UrlScheme/W1UrlScheme_Lib' }
   s.requires_arc = true
 
 end
